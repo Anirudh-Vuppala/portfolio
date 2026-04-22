@@ -7,7 +7,7 @@ const Navbar = () => {
     justifyContent: 'center',
     gap: '3rem',
     padding: '1.5rem',
-    background: 'rgba(10, 10, 15, 0.7)',
+    background: 'var(--bg-card)',
     backdropFilter: 'blur(12px)',
     borderBottom: '1px solid var(--border-subtle)',
     position: 'sticky',
@@ -31,7 +31,6 @@ const Navbar = () => {
   const activeLinkStyle = {
     ...linkStyle,
     color: 'var(--accent-cyan)',
-    background: 'rgba(0, 242, 254, 0.05)',
     boxShadow: 'inset 0 -2px 0 var(--accent-cyan)'
   };
 
@@ -39,18 +38,20 @@ const Navbar = () => {
     <nav style={navStyle}>
       <NavLink 
         to="/" 
+        className="levitate-link"
         style={({ isActive }) => isActive ? activeLinkStyle : linkStyle}
       >
         {'// Profile'}
       </NavLink>
       <NavLink 
         to="/projects" 
+        className="levitate-link"
         style={({ isActive }) => isActive ? activeLinkStyle : linkStyle}
       >
         {'// Architecture'}
       </NavLink>
     </nav>
   );
-};
+}; // <-- This was the missing brace!
 
 export default Navbar;

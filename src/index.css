@@ -1,13 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=JetBrains+Mono:wght@400;700&display=swap');
 
 :root {
-  --bg-dark: #020617; /* Slate Black */
-  --bg-card: rgba(15, 23, 42, 0.6);
-  --accent-cyan: #38bdf8; /* Sky Blue */
-  --accent-purple: #818cf8; /* Soft Indigo */
-  --text-main: #f8fafc;
-  --text-muted: #94a3b8;
-  --border-subtle: rgba(148, 163, 184, 0.15);
+  --bg-dark: #f0f4f8; /* Soft Icy Background */
+  --bg-card: rgba(255, 255, 255, 0.6); /* Frosted Glass Cards */
+  --accent-cyan: #00b4d8; /* Bright Ice Blue */
+  --accent-purple: #0077b6; /* Deep Ocean Blue */
+  --text-main: #0f172a; /* Dark Slate for high readability */
+  --text-muted: #475569; /* Medium Slate */
+  --border-subtle: rgba(0, 180, 216, 0.2);
 }
 
 * {
@@ -95,5 +95,13 @@ h1, h2, h3 {
 .glitch-hover:hover {
   animation: glitch 0.3s cubic-bezier(.25, .46, .45, .94) both infinite;
   color: var(--accent-cyan);
-  text-shadow: 2px 0 var(--accent-purple), -2px 0 red;
+  text-shadow: 2px 0 var(--accent-purple), -2px 0 #ffffff; /* Replaced red with pure white */
+}
+.levitate-link {
+  transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1), text-shadow 0.3s ease !important;
+}
+
+.levitate-link:hover {
+  transform: translateY(-4px); /* Lifts the text up */
+  text-shadow: 0 8px 15px rgba(0, 180, 216, 0.5); /* Drops an icy glowing shadow beneath it */
 }

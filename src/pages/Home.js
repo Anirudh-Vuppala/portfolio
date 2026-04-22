@@ -18,10 +18,21 @@ const Home = () => {
     paddingBottom: '0.5rem'
   };
 
+  // Injecting custom keyframes for the levitation effect
+  const levitateAnimation = `
+    @keyframes levitate {
+      0% { transform: translateY(0px); box-shadow: 0 10px 30px -10px var(--accent-cyan); }
+      50% { transform: translateY(-15px); box-shadow: 0 25px 40px -10px var(--accent-purple); }
+      100% { transform: translateY(0px); box-shadow: 0 10px 30px -10px var(--accent-cyan); }
+    }
+  `;
+
   return (
     <div>
       {/* Header Section */}
       <div style={{ ...sectionStyle, display: 'flex', alignItems: 'center', gap: '3rem', flexWrap: 'wrap' }}>
+        
+        {/* --- HATKE LEVITATING PROFILE PICTURE --- */}
         <div style={{
           width: '180px',
           height: '180px',
@@ -31,8 +42,10 @@ const Home = () => {
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
-          overflow: 'hidden'
+          overflow: 'hidden',
+          animation: 'levitate 4s ease-in-out infinite' 
         }}>
+          <style>{levitateAnimation}</style> {/* Injects the keyframes */}
           <img 
             src={profilePic} 
             alt="Anirudh Vuppala" 

@@ -6,6 +6,7 @@ import Navbar from './components/Navbar';
 import Home from './pages/Home';
 import Projects from './pages/Projects';
 import './App.css';
+import CustomCursor from './components/CustomCursor';
 
 function App() {
   const particlesInit = useCallback(async engine => {
@@ -14,7 +15,9 @@ function App() {
 
   return (
     <HashRouter>
-      <div className="app-container">
+      <div className="app-container" style={{ cursor: 'none' }}> {/* Hides default cursor */}
+        <CustomCursor /> {/* The new Hatke cursor */}
+
         {/* The Neural Network Background */}
         <Particles
           id="tsparticles"
@@ -31,9 +34,9 @@ function App() {
               },
             },
             particles: {
-              color: { value: "#818cf8" },
+              color: { value: "#00b4d8" },
               links: {
-                color: "#38bdf8",
+                color: "#0077b6",
                 distance: 150,
                 enable: true,
                 opacity: 0.2,

@@ -36,7 +36,8 @@ const ProjectCard = ({ title, status, tech, description, link, linkText }) => {
     transform: 'translate(-50%, -50%)',
     width: '300px',
     height: '300px',
-    background: 'radial-gradient(circle, rgba(0, 242, 254, 0.15) 0%, transparent 70%)',
+    // Uses modern CSS color-mix to adapt to ANY theme variable automatically
+    background: 'radial-gradient(circle, color-mix(in srgb, var(--accent-cyan) 10%, transparent) 0%, transparent 70%)',
     pointerEvents: 'none',
     zIndex: 0,
     opacity: 0,
@@ -70,7 +71,7 @@ const ProjectCard = ({ title, status, tech, description, link, linkText }) => {
         }}>
           [{status}]
         </div>
-        <h3 style={{ fontSize: '1.5rem', marginBottom: '1rem', color: '#fff' }}>{title}</h3>
+        <h3 style={{ fontSize: '1.5rem', marginBottom: '1rem', color: 'var(--text-main)' }}>{title}</h3>
         
         <div style={{ marginBottom: '1.5rem' }}>
           {tech.map((t, i) => (
